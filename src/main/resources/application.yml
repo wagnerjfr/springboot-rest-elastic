@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: springboot-elastic-gym-activities
+
+server:
+  port: 8080
+
+application:
+  elasticsearch:
+    clustername: docker-es-cluster
+    host: localhost
+    port: 9300
+
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure.include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
