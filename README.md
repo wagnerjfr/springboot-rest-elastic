@@ -39,7 +39,6 @@ kibana          /usr/local/bin/kibana-docker     Up (healthy)   0.0.0.0:5601->56
 ```
 
 ## 3. Adding some data
-
 Let's add some data.. ```cd``` into scripts folder and run:
 ```
 chmod +x insert-activities.sh
@@ -84,7 +83,6 @@ The below window will appear. Fill with the JSON information want  for your new 
 ![alt text](https://github.com/wagnerjfr/springboot-rest-elastic/blob/master/figures/figure2.png)
 
 ## 5. Play around with Kibana
-
 Kibana is running at <http://localhost:5601>.
 
 Open it and play around. Create cool visualizations and add them to your dashboard.
@@ -100,4 +98,3 @@ Delete created Docker images:
 ```
 docker rmi docker.elastic.co/kibana/kibana-oss:6.4.2 docker.elastic.co/elasticsearch/elasticsearch-oss:6.4.2
 ```
-
