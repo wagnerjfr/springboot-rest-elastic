@@ -2,9 +2,9 @@
 
 This project was developed using SpringBoot [Spring Initializr](start.spring.io) and the following dependencies were selected:
 1. Web
-2. Elasticsearch
-3. Actuator
-4. Lombok
+2. Elasticsearch (https://www.elastic.co/)
+3. Actuator (https://spring.io/guides/gs/actuator-service/)
+4. Lombok (https://projectlombok.org/)
 
 The following sections details each step to get the project up and running.
 
@@ -39,13 +39,13 @@ kibana          /usr/local/bin/kibana-docker     Up (healthy)   0.0.0.0:5601->56
 ```
 
 ## 3. Adding some data
-Let's add some data.. ```cd``` into scripts folder and run:
+Let's add some data.. `cd` into scripts folder and run:
 ```
 chmod +x insert-activities.sh
 ./insert-activities.sh
 ```
 
-We now can ```curl``` and see the data added:
+We now can `curl` and see the data added:
 ```
 curl http://localhost:9200/training/_search?pretty
 ```
@@ -89,7 +89,7 @@ Open it and play around. Create cool visualizations and add them to your dashboa
 
 ![alt text](https://github.com/wagnerjfr/springboot-rest-elastic/blob/master/figures/kibana.png)
 
-## Clean up
+## 6. Clean up
 Stop Elasticsearch and Kibana containers:
 ```
 docker-compose down
