@@ -68,7 +68,7 @@ Access using your internet browser the link at <http://localhost:8080/swagger-ui
 
 We can use this UI to run POST, PUT, GET and DELETE calls.
 
-First we are going to check the existing data.
+First, we are going to check the existing data.
 
 Open "**GET** *"api/activities*" and click on **"Try it out"** button.
 
@@ -78,7 +78,7 @@ Then click on **"Execute"** button in the bottom as shown in the figure bellow.
 
 Let's add a new activity. Open the **POST** section and click on **"Try it out"** button.
 
-The below window will appear. Fill with the JSON information want  for your new user and click on **"Execute"** button in the bottom.
+The below window will appear. Fill with the JSON information want for your new user and click on **"Execute"** button in the bottom.
 
 ![alt text](https://github.com/wagnerjfr/springboot-rest-elastic/blob/master/figures/figure2.png)
 
