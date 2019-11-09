@@ -30,7 +30,7 @@ It will take some seconds. We can follow its status by running:
 docker-compose ps
 ```
 
-The containers are ready to be used when the below output log is printed with "State" ```Up (healthy)```:
+The containers are ready to be used when the below output log is printed with **State** ```Up (healthy)```:
 ```console
     Name                   Command                  State                           Ports
 --------------------------------------------------------------------------------------------------------------
