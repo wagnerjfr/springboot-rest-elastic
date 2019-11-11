@@ -13,7 +13,7 @@ Run the command below in your terminal to clone the project:
 ```
 git clone https://github.com/wagnerjfr/sprinboot-rest-elastic.git
 ```
-Go inside project folder and build the project running:
+Go inside project folder and build the project:
 ```
 cd sprinboot-rest-elastic
 mvn clean package -DskipTests
