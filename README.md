@@ -39,7 +39,7 @@ kibana          /usr/local/bin/kibana-docker     Up (healthy)   0.0.0.0:5601->56
 ```
 
 ## 3. Adding some data
-Let's add some data.. `cd` into scripts folder and run:
+Let's add some data. `cd` into scripts folder and run:
 ```
 chmod +x insert-activities.sh
 ./insert-activities.sh
