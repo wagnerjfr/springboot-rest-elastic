@@ -8,7 +8,7 @@ This project was developed using SpringBoot [Spring Initializr](start.spring.io)
 
 The following sections details each step to get the project up and running.
 
-## 1. Clone the project and build it
+1 ## Clone the project and build it
 Run the command below in your terminal to clone the project:
 ```
 git clone https://github.com/wagnerjfr/sprinboot-rest-elastic.git
@@ -18,7 +18,7 @@ Go inside project folder and build the project:
 cd sprinboot-rest-elastic
 mvn clean package -DskipTests
 ```
-## 2. Start Elasticsearch and Kibana using Docker Compose
+1 ## Start Elasticsearch and Kibana using Docker Compose
 
 Execute the command:
 ```
@@ -37,8 +37,7 @@ The containers are ready to be used when the below output log is printed with **
 elasticsearch   /usr/local/bin/docker-entr ...   Up (healthy)   0.0.0.0:9200->9200/tcp, 0.0.0.0:9300->9300/tcp
 kibana          /usr/local/bin/kibana-docker     Up (healthy)   0.0.0.0:5601->5601/tcp
 ```
-
-## 3. Adding some data
+1 ## Adding some data
 Let's add some data. `cd` into scripts folder and run:
 ```
 chmod +x insert-activities.sh
@@ -50,7 +49,7 @@ We now can `curl` and see the data added:
 curl http://localhost:9200/training/_search?pretty
 ```
 
-## 4. Launch the application and interact with it
+1 ## Launch the application and interact with it
 From the project root folder, run the command below to launch the application:
 ```
 mvn clean spring-boot:run
@@ -82,14 +81,15 @@ The below window will appear. Fill with the JSON information want for your new u
 
 ![alt text](https://github.com/wagnerjfr/springboot-rest-elastic/blob/master/figures/figure2.png)
 
-## 5. Play around with Kibana
+1 ## Play around with Kibana
 Kibana is running at <http://localhost:5601>.
 
 Open it and play around. Create cool visualizations and add them to your dashboard.
 
 ![alt text](https://github.com/wagnerjfr/springboot-rest-elastic/blob/master/figures/kibana.png)
 
-## 6. Clean up
+1 ## Clean up
+
 Stop Elasticsearch and Kibana containers:
 ```
 docker-compose down
