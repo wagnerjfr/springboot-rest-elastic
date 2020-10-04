@@ -38,8 +38,11 @@ elasticsearch   /usr/local/bin/docker-entr ...   Up (healthy)   0.0.0.0:9200->92
 kibana          /usr/local/bin/kibana-docker     Up (healthy)   0.0.0.0:5601->5601/tcp
 ```
 ## 3. Adding some data
-Let's add some data. `cd` into scripts folder and run:
+Let's add some data. `cd` into **scripts** folder and run:
 ```
+chmod +x create-index.sh
+./create-index.sh
+
 chmod +x insert-activities.sh
 ./insert-activities.sh
 ```
@@ -50,20 +53,20 @@ curl http://localhost:9200/training/_search?pretty
 ```
 
 ## 4. Launch the application and interact with it
-From the project root folder, run the command below to launch the application:
+From the project **root** folder, run the command below to launch the application:
 ```
 mvn clean spring-boot:run
 ```
 A successful output log will be:
 ```console
-2019-01-14 10:07:21.484  INFO 29432 --- [           main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2019-01-14 10:07:21.873  INFO 29432 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-01-14 10:07:21.876  INFO 29432 --- [           main] pringbootElasticGymActivitiesApplication : Started SpringbootElasticGymActivitiesApplication in 10.686 seconds (JVM running for 29.18)
+2020-10-04 19:02:57.883  INFO 2729 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-04 19:02:58.054  INFO 2729 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-04 19:02:58.568  INFO 2729 --- [           main] pringbootElasticGymActivitiesApplication : Started SpringbootElasticGymActivitiesApplication in 4.53 seconds (JVM running for 4.913)
 ```
 ### Swagger
 We can use Swagger to easily interact with the REST API.
 
-Access using your internet browser the link at <http://localhost:8080/swagger-ui.html>.
+Access using your internet browser the link at <http://localhost:8080/swagger-ui/index.html>.
 
 We can use this UI to run POST, PUT, GET and DELETE calls.
 
@@ -90,11 +93,11 @@ Open it and play around. Create cool visualizations and add them to your dashboa
 
 ## 6. Clean up
 
-Stop Elasticsearch and Kibana containers:
+To stop Elasticsearch and Kibana containers:
 ```
 docker-compose down
 ```
-Delete created Docker images:
+To delete created Docker images:
 ```
 docker rmi docker.elastic.co/kibana/kibana-oss:6.4.2 docker.elastic.co/elasticsearch/elasticsearch-oss:6.4.2
 ```

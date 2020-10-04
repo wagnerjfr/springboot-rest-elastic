@@ -34,7 +34,7 @@ public class SpringbootElasticGymActivitiesApplicationTests {
 
 	@Test
 	public void testSave() {
-		Activity activity = new Activity(new Date(), "Strenght", "Indoor", "workout");
+		Activity activity = new Activity("2020-01-01", "Strength", "Indoor", "workout");
 		Activity testActivity = activityService.save(activity);
 
 		assertNotNull(testActivity.getId());

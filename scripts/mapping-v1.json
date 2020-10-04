@@ -1,0 +1,21 @@
+{
+  "mappings": {
+    "properties": {
+      "date": {
+        "type": "date", "format": "yyyy-MM-dd"
+      },
+      "description": {
+        "type": "text"
+      },
+      "id": {
+        "type": "text"
+      },
+      "kind": {
+        "type": "keyword"
+      },
+      "place": {
+        "type": "keyword"
+      }
+    }
+  }
+}
