@@ -5,8 +5,8 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.2.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>2.3.4.RELEASE</version>
+        <relativePath/>
     </parent>
     <groupId>com.mycompany</groupId>
     <artifactId>springboot-elastic-gym-activities</artifactId>
@@ -17,8 +17,8 @@
     <properties>
         <java.version>1.8</java.version>
         <orika.version>1.5.2</orika.version>
-        <springfox.version>2.9.2</springfox.version>
-        <spring-cloud.version>Greenwich.RC2</spring-cloud.version>
+        <springfox.version>3.0.0</springfox.version>
+        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
     </properties>
 
     <dependencies>
@@ -29,14 +29,14 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
-        <!--dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -49,7 +49,7 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- Elasticsearch -->
+        <!-- ElasticSearch -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
@@ -62,17 +62,13 @@
             <version>${orika.version}</version>
         </dependency>
 
-        <!-- Swagger2 -->
+        <!-- SpringFox -->
         <dependency>
             <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
+            <artifactId>springfox-boot-starter</artifactId>
             <version>${springfox.version}</version>
         </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>${springfox.version}</version>
-        </dependency>
+
     </dependencies>
 
     <dependencyManagement>
@@ -86,6 +82,14 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>jcenter-snapshots</id>
+            <name>jcenter</name>
+            <url>https://jcenter.bintray.com/</url>
+        </repository>
+    </repositories>
 
     <build>
         <plugins>

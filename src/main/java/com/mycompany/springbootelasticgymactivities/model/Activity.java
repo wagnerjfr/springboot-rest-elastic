@@ -4,13 +4,14 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.DateFormat;
 import org.springframework.data.elasticsearch.annotations.Document;
-
-import java.util.Date;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
 @Data
 @NoArgsConstructor
-@Document(indexName = "training", type = "activities")
+@Document(indexName = "training", createIndex = false)
 public class Activity {
 
     @Id
@@ -20,9 +21,10 @@ public class Activity {
     private String description;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    private Date date;
+    @Field(type = FieldType.Date, format = DateFormat.date)
+    private String date;
 
-    public Activity(Date date, String kind, String place,String description) {
+    public Activity(String date, String kind, String place, String description) {
         this.date = date;
         this.kind = kind;
         this.place = place;

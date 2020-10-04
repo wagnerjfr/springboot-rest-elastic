@@ -2,7 +2,6 @@ package com.mycompany.springbootelasticgymactivities.controller;
 
 import com.mycompany.springbootelasticgymactivities.dto.CreateActivityDto;
 import com.mycompany.springbootelasticgymactivities.dto.UpdateActivityDto;
-import com.mycompany.springbootelasticgymactivities.exception.ActivityNotFoundException;
 import com.mycompany.springbootelasticgymactivities.model.Activity;
 import com.mycompany.springbootelasticgymactivities.service.ActivityService;
 import io.swagger.annotations.ApiOperation;
@@ -34,7 +33,7 @@ public class ActivityController {
         @ApiResponse(code = 400, message = "Bad Request"),
         @ApiResponse(code = 500, message = "Internal Server Error")
     })
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/{id}")
     public Activity createActivity(@Valid @RequestBody CreateActivityDto createActivityDto) {
         Activity activity = mapperFacade.map(createActivityDto, Activity.class);
@@ -64,8 +63,7 @@ public class ActivityController {
     })
     @ResponseStatus(HttpStatus.OK)
     @PutMapping("/{id}")
-    public Activity updateActivity(@PathVariable String id, @Valid @RequestBody UpdateActivityDto updateActivityDto)
-        throws ActivityNotFoundException {
+    public Activity updateActivity(@PathVariable String id, @Valid @RequestBody UpdateActivityDto updateActivityDto) {
         Activity activity = activityService.getActivityById(id);
         mapperFacade.map(updateActivityDto, activity);
         return activityService.save(activity);
@@ -80,7 +78,7 @@ public class ActivityController {
     })
     @ResponseStatus(HttpStatus.OK)
     @GetMapping
-    public Page<Activity> getProducts(Pageable pageable) {
+    public Page<Activity> getActivities(Pageable pageable) {
         return activityService.listActivitiesByPage(pageable);
     }
 
@@ -92,7 +90,7 @@ public class ActivityController {
     })
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/{id}")
-    public Activity getProduct(@PathVariable String id) throws ActivityNotFoundException {
+    public Activity getActivity(@PathVariable String id) {
         return activityService.getActivityById(id);
     }
 }

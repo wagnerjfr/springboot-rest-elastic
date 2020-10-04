@@ -3,13 +3,11 @@ package com.mycompany.springbootelasticgymactivities.dto;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-import java.util.Date;
-
 @Data
 public class UpdateActivityDto {
 
-    @ApiModelProperty(value = "activity date", example = "2019-01-01")
-    private Date date;
+    @ApiModelProperty(value = "activity date", example = "2020-10-01")
+    private String date;
 
     @ApiModelProperty(position = 1, value = "activity kind (Rest, Cardio, Strength, Stretch)", example = "Strength")
     private String kind;
