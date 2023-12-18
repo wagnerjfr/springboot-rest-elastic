@@ -1,6 +1,6 @@
 # Spring Boot RESTful CRUD API Example with ElasticSearch/Kibana
 
-This project was developed using SpringBoot [Spring Initializr](start.spring.io) and the following dependencies were selected:
+This project was developed using SpringBoot **_"start.spring.io"_** and the following dependencies were selected:
 1. Web
 2. Elasticsearch (https://www.elastic.co/)
 3. Actuator (https://spring.io/guides/gs/actuator-service/)
